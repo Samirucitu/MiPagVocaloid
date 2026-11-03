@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 100vw;
+}
+html {
+    scroll-behavior: smooth;
+}
+body{
+    background-color: black;
+    color: white;
+    font-family: "Playfair Display";
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+    max-width: 100vw;
+    header{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        h1{
+            padding-left: 1rem;
+            a{
+                color: currentColor;
+                text-decoration: none;
+            }
+        }
+        nav{
+            display: flex;
+            flex: 0 1 auto;
+            padding-right: 1rem;
+            button{
+                background-color: rgba(255, 255, 255, .05);
+                border-radius: 50%;
+                width: 50px;
+                height: 50px;
+                cursor: pointer;
+            }
+            ul{
+                display: none;
+                list-style: none;
+                gap: 1rem;
+                padding: .5rem;
+                flex-wrap: wrap;
+                flex-direction: column;
+                &.barranav{
+                    display: flex;
+                }
+                li{
+                    &:hover{
+                        transform: scale(1.3);
+                    }
+                    a{
+                        text-decoration: none;
+                        color: currentColor;
+                    }
+                }
+
+            }
+        }
+    }
+    main{
+        max-width: 100vw;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        .banner {
+            display: flex;
+            justify-self: center;
+            width: 80%;
+            height: 20vh;
+            background-image: url(https://images3.alphacoders.com/763/763716.png);
+            background-position: 0 28%;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    
+        .indice {
+            display: grid;
+            align-self: start;
+            border: 1px solid;
+            margin-left: 1rem;
+            grid-template-rows: 1.5em minmax(0, 0fr);
+            place-items: center;
+            transition: 300ms ease;
+            padding: 1rem 2rem;
+            user-select: none;
+            overflow: hidden;
+            border-radius: 10px;
+    
+            &.indiceAbierto {
+                grid-template-rows: 1.5em minmax(0, 1fr);
+            }
+    
+            .hidden {
+                overflow: hidden;
+                opacity: 0;
+                transition: 75ms ease;
+                pointer-events: none;
+            }
+    
+            .visible {
+                opacity: 1;
+                transition: 2000ms ease;
+                pointer-events: auto;
+            }
+    
+            .tituloIndice {
+                cursor: pointer;
+            }
+    
+            .lista {
+                ol {
+                    counter-reset: item;
+                    padding-left: 0;
+    
+                    li {
+                        counter-increment: item;
+    
+                        a {
+                            text-decoration: none;
+                            color: currentColor;
+                        }
+    
+                        ol {
+                            counter-reset: subitem;
+                            list-style: none;
+    
+                            li {
+                                counter-increment: subitem;
+    
+                                &::before {
+                                    content: counter(item) "." counter(subitem) " ";
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    
+        .toTop {
+            display: none;
+            width: 100%;
+            justify-content: end;
+            padding-right: .65rem;
+            font-size: 1rem;
+            position: sticky;
+            top: 10vh;
+    
+            a {
+                background-color: rgba(255, 255, 255, .05);
+                border-radius: 15px;
+                width: auto;
+                height: auto;
+                color: currentColor;
+                border: 1px solid;
+                padding: 1rem 1.5rem;
+                text-decoration: none;
+    
+                &:hover {
+                    scale: 1.2;
+                }
+            }
+        }
+    
+        .tablas table {
+            position: relative;
+            .personajes {
+                width: 40%;
+                display: none;
+            }
+    
+            img.personajeEnLaTabla {
+                display: table-column;
+                width: 100%;
+                margin: 0 auto;
+            }
+        }
+        #abajo.toTop{
+            position: relative;
+            display: flex;
+            inset: 0;
+            justify-content: start;
+            padding-left: 1rem;
+        }
+    }
+    .tablas {
+        width: 75%;
+        min-height: 100vh;
+
+        table {
+            width: 100%;
+            border: 1px solid;
+            border-collapse: collapse;
+            margin: 3rem 0;
+
+            caption {
+                padding: 1rem;
+                font-family: sans-serif;
+                font-size: 1.5rem;
+                border: 1px solid;
+            }
+
+            th, td {
+                border: 1px solid #dddddd;
+                text-align: center;
+                padding: 1rem;
+                font-family: serif;
+                direction: column;
+                margin: 0 auto;
+
+                img {
+                    max-width: 75%;
+                }
+            }
+
+            td {
+                font-family: sans-serif;
+                align-content: start;
+                padding: 1rem;
+            }
+        }
+    }
+}
+footer{
+    p{
+        font-size: .8em;
+        padding: 5px;
+    }
+}
+
+@media screen and (max-width: 630px) {
+body{
+    header{
+        nav{
+            ul{
+                display: flex;
+                &.barranav{
+                    display: none;
+                }
+            }
+        }
+    }
+}
+}
+@media screen and (min-width: 630px) {
+body{
+    header{
+        nav{
+            button{
+                display: none;
+            }
+            ul{
+                display: flex;
+                gap: 2rem;
+                flex-direction: row;
+            }
+        }
+    }
+}
+}
+
+@media screen and (min-width: 768px){
+    body.pagina-personajes{
+        main{
+            .banner{
+                height: 40vh;
+            }
+            .toTop{
+                display: flex;
+            }
+            .tablas table{
+                .personajes{
+                    width: 40%;
+                    display: table-cell;
+                }
+                img.personajeEnLaTabla{
+                    display: none;
+                }
+            }
+            #abajo.toTop{
+                display: none;
+            }
+        }
+    }
+}
