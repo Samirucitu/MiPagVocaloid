@@ -8,6 +8,5 @@ const tituloIndice = document.querySelector(".tituloIndice");
 const ulindice = document.querySelector("#ulindice");
 tituloIndice.addEventListener('click', () => {
     indice.classList.toggle('indiceAbierto');
-    ulindice.classList.toggle('hidden');
     ulindice.classList.toggle('visible');
 })

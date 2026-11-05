@@ -4,18 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi galeria de favs de Vocaloid y más</title>
-    <link rel="stylesheet" href="../css/estilos general.css">
+    <link rel="stylesheet" href="../css/tailwindcss.css">
     <script src="../js/general.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+        @theme{
+            --size-px50: 50px;
+            --breakpoint-px630: 630px;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1><a href="../index.html">Vocaloid & Más</a></h1>
-        <nav>
-            <button type="button" onclick="menudesplegable()"><img src="../svg/menu.svg"></button>
-            <ul id="barranav" class="barranav">
-                <li><a href="./personajes.html">personajes</a></li>
-                <li><a href="./artistas.html">artistas</a></li>
-                <li><a href="./canciones.html">canciones</a></li>
+        <h1 class="pl-4 text-3xl font-bold"><a class="text-current no-underline" href="../index.html">Vocaloid & Más</a></h1>
+        <nav class="flex flex-initial pr-4">
+            <button class="bg-white/5 rounded-full size-px50 cursor-pointer px630:hidden" type="button" onclick="menudesplegable()"><img class="justify-self-center" src="../svg/menu.svg"></button>
+            <ul id="barranav" class="hidden list-none gap-4 p-2 flex-wrap flex-col [&.barranav]:flex min-px630:flex min-px630:gap-8 min-px630:flex-row">
+                <li class="hover:scale-105"><a class="text-current no-underline" href="./personajes.html">personajes</a></li>
+                <li class="hover:scale-105"><a class="text-current no-underline" href="./artistas.html">artistas</a></li>
+                <li class="hover:scale-105"><a class="text-current no-underline" href="./canciones.html">canciones</a></li>
             </ul>
         </nav>
     </header>
