@@ -11,10 +11,12 @@ body{
     grid-template-rows: auto 1fr auto;
     min-height: 100vh;
     max-width: 100vw;
+    gap: 1rem;
     header{
         display: flex;
         justify-content: space-between;
         width: 100%;
+        position: relative;
     }
     main{
         max-width: 100vw;
@@ -23,8 +25,10 @@ body{
         flex-direction: column;
         gap: 10px;
         align-items: center;
+        position: relative;
     }
     footer{
+        position: relative;
         p{
             font-size: .8rem;
             padding: 5px;

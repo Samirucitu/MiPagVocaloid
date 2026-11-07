@@ -13,6 +13,7 @@
             --breakpoint-px630: 630px;
             --grid-template-rows-indice: 1.5em minmax(0,0fr);
             --grid-template-rows-indiceabierto: 1.5em minmax(0, 1fr);
+            --inset-vh10: 10vh;
         }
     </style>
 </head>
@@ -78,6 +79,11 @@
                 </ol>
             </div>
         </div>
+        <div class="toTop hidden w-full justify-end pr-2.5 text-base sticky top-vh10 md:flex">
+            <a class="bg-black/5 rounded-2xl size-auto text-current border border-solid py-4 px-6 hover:scale-110" href="#">
+                Top
+            </a>
+        </div>
         <div class="tablas w-3/4">
             <table class="relative w-full border border-collapse my-12 mx-0" id="tableArtistas">
                 <thead>
@@ -87,7 +93,7 @@
                         <th class="border text-center p-4 font-playfair my-0 mx-auto">mis palabras ¯\_(•_•)_/¯</th>
                     </tr>
                 </thead>
-                <tbody >
+                <tbody>
                     <tr>
                         <td class="personajes w-2/5 hidden md:w-2/5 md:table-cell border p-4 justify-items-center">
                             <img class="max-w-40 rounded-full" src="../img/Maretu_ArtVocaloid.jpg">
@@ -96,9 +102,9 @@
                             Maretu
                             <ul class="pt-4">
                                 Canciones que más me gustan: <br><br>
-                                <li>Mind brand</li>
-                                <li>Aishiteitanoni</li>
-                                <li>Suck It Up</li>
+                                <li><a href="">Mind brand</a></li>
+                                <li><a href="">Aishiteitanoni</a></li>
+                                <li><a href="">Suck It Up</a></li>
                             </ul>
                             <img class="personajeEnLaTabla table-column w-full mt-6 mx-auto max-w-40 md:hidden rounded-full" src="../img/Maretu_ArtVocaloid.jpg">
                         </td>
@@ -111,9 +117,9 @@
                             Deco 27
                             <ul class="pt-4">
                                 Canciones que más me gustan: <br><br>
-                                <li>Ghost Rule</li>
-                                <li>The Vampire</li>
-                                <li>Monitoring</li>
+                                <li><a href="">Ghost Rule</a></li>
+                                <li><a href="">The Vampire</a></li>
+                                <li><a href="">Monitoring</a></li>
                             </ul>
                             <img class="personajeEnLaTabla table-column w-full mt-6 mx-auto max-w-40 md:hidden rounded-full" src="../img/Deco27_ArtVocaloid.jpg">
                         </td>
@@ -126,9 +132,9 @@
                             Hachi
                             <ul class="pt-4">
                                 Canciones que más me gustan: <br><br>
-                                <li>Matryoshka </li>
-                                <li>Ward Room 305 - (Byoutou 305 Goushitsu)</li>
-                                <li>Mrs. Pumpkin's Comical Dream</li>
+                                <li><a href="">Matryoshka</a> </li>
+                                <li><a href="">Ward Room 305 - (Byoutou 305 Goushitsu)</a></li>
+                                <li><a href="">Mrs. Pumpkin's Comical Dream</a></li>
                             </ul>
                             <img class="personajeEnLaTabla table-column w-full mt-6 mx-auto max-w-40 md:hidden rounded-full" src="../img/Hachi_ArtVocaloid.jpg">
                         </td>
@@ -141,9 +147,9 @@
                             Kikuo
                             <ul class="pt-4">
                                 Canciones que más me gustan: <br><br>
-                                <li>Shikabane no Odori</li>
-                                <li>Aishite Aishite Aishite</li>
-                                <li>Pokkan karaa</li>
+                                <li><a href="">Shikabane no Odori</a></li>
+                                <li><a href="">Aishite Aishite Aishite</a></li>
+                                <li><a href="">Pokkan karaa</a></li>
                             </ul>
                             <img class="personajeEnLaTabla table-column w-full mt-6 mx-auto max-w-40 md:hidden rounded-full" src="../img/Kikuo_ArtVocaloid.webp">
                         </td>
@@ -156,9 +162,9 @@
                             Azari
                             <ul class="pt-4">
                                 Canciones que más me gustan: <br><br>
-                                <li>D/N/A</li>
-                                <li>Sell a Friend</li>
-                                <li>Shadow Shadow</li>
+                                <li><a href="">D/N/A</a></li>
+                                <li><a href="">Sell a Friend</a></li>
+                                <li><a href="">Shadow Shadow</a></li>
                             </ul>
                             <img class="personajeEnLaTabla table-column w-full mt-6 mx-auto max-w-40 md:hidden rounded-full" src="../img/Azari_ArtVocaloid.jpg">
                         </td>
@@ -172,9 +178,9 @@
                             <br>Aunque tiene varias canciones que no son de un sintetizador como Vocaloid u otros, sí tiene canciones con Vocaloid
                             <ul class="pt-4">
                                 Canciones que más me gustan: <br><br>
-                                <li>Insomnia</li>
-                                <li>Ghost Avenue</li>
-                                <li>Tokyo Ghetto</li>
+                                <li><a href="">Insomnia</a></li>
+                                <li><a href="">Ghost Avenue</a></li>
+                                <li><a href="">Tokyo Ghetto</a></li>
                             </ul>
                             <img class="personajeEnLaTabla table-column w-full mt-6 mx-auto max-w-40 md:hidden rounded-full" src="../img/Eve_ArtVocaloid.jpg">
                         </td>
@@ -187,9 +193,9 @@
                             PinocchioP
                             <ul class="pt-4">
                                 Canciones que más me gustan: <br><br>
-                                <li>God-ish</li>
-                                <li>Love Attribute</li>
-                                <li>Reincarnation Apple</li>
+                                <li><a href="">God-ish</a></li>
+                                <li><a href="">Love Attribute</a></li>
+                                <li><a href="">Reincarnation Apple</a></li>
                             </ul>
                             <img class="personajeEnLaTabla table-column w-full mt-6 mx-auto max-w-40 md:hidden rounded-full" src="../img/PinocchioP_ArtVocaloid.webp">
                         </td>
@@ -202,9 +208,9 @@
                             Inabakumori
                             <ul class="pt-4">
                                 Canciones que más me gustan: <br><br>
-                                <li>Lag Train</li>
-                                <li>Lost Umbrella</li>
-                                <li>Relay Outer</li>
+                                <li><a href="">Lag Train</a></li>
+                                <li><a href="">Lost Umbrella</a></li>
+                                <li><a href="">Relay Outer</a></li>
                             </ul>
                             <img class="personajeEnLaTabla table-column w-full mt-6 mx-auto max-w-40 md:hidden rounded-full" src="../img/Inabakumori_ArtVocaloid.webp">
                         </td>
@@ -218,9 +224,9 @@
                             <br>(ABM)
                             <ul class="pt-4">
                                 Canciones que más me gustan: <br><br>
-                                <li>Yararara</li>
-                                <li>Signaling</li>
-                                <li>Mis-Take RPG</li>
+                                <li><a href="">Yararara</a></li>
+                                <li><a href="">Signaling</a></li>
+                                <li><a href="">Mis-Take RPG</a></li>
                             </ul>
                             <img class="personajeEnLaTabla table-column w-full mt-6 mx-auto max-w-40 md:hidden rounded-full" src="../img/ABM_ArtVocaloid.jpg">
                         </td>
@@ -233,9 +239,9 @@
                             NAKISO
                             <ul class="pt-4">
                                 Canciones que más me gustan: <br><br>
-                                <li>Retry Now</li>
-                                <li>BAKENOHANA</li>
-                                <li>MINAGOROSHI</li>
+                                <li><a href="">Retry Now</a></li>
+                                <li><a href="">BAKENOHANA</a></li>
+                                <li><a href="">MINAGOROSHI</a></li>
                             </ul>
                             <img class="personajeEnLaTabla table-column w-full mt-6 mx-auto max-w-40 md:hidden rounded-full" src="../img/NAKISO_ArtVocaloid.webp">
                         </td>
@@ -248,9 +254,9 @@
                             Kanaria
                             <ul class="pt-4">
                                 Canciones que más me gustan: <br><br>
-                                <li>BRAIN</li>
-                                <li>CartoonGirl</li>
-                                <li>Yoidoreshirazu</li>
+                                <li><a href="">BRAIN</a></li>
+                                <li><a href="">CartoonGirl</a></li>
+                                <li><a href="">Yoidoreshirazu</a></li>
                             </ul>
                             <img class="personajeEnLaTabla table-column w-full mt-6 mx-auto max-w-40 md:hidden rounded-full" src="../img/Kanaria_ArtVocaloid.jpg">
                         </td>
@@ -263,9 +269,9 @@
                             Kairikibear
                             <ul class="pt-4">
                                 Canciones que más me gustan: <br><br>
-                                <li>Venom - (Venomu)</li>
-                                <li>Bug</li>
-                                <li>DARLING DANCE</li>
+                                <li><a href="">Venom - (Venomu)</a></li>
+                                <li><a href="">Bug</a></li>
+                                <li><a href="">DARLING DANCE</a></li>
                             </ul>
                             <img class="personajeEnLaTabla table-column w-full mt-6 mx-auto max-w-40 md:hidden rounded-full" src="../img/Kairikibear_ArtVocaloid.jpg">
                         </td>
@@ -278,15 +284,20 @@
                             Jon-Yakitori
                             <ul class="pt-4">
                                 Canciones que más me gustan: <br><br>
-                                <li>Konton Boogie</li>
-                                <li>AntiSystem's</li>
-                                <li>Yamada Perfect</li>
+                                <li><a href="">Konton Boogie</a></li>
+                                <li><a href="">AntiSystem's</a></li>
+                                <li><a href="">Yamada Perfect</a></li>
                             </ul>
                             <img class="personajeEnLaTabla table-column w-full mt-6 mx-auto max-w-40 md:hidden rounded-full" src="../img/jon-Yakitori_ArtVocaloid.jpg">
                         </td>
                     </tr>
                 </tbody>
             </table>
+        </div>
+        <div id="abajo" class="toTop relative flex inset-0 md:hidden self-start pl-4">
+            <a class="bg-black/5 border rounded-2xl size-auto text-current py-4 px-6 hover:scale-110" href="#">
+                Top
+            </a>
         </div>
     </main>
 

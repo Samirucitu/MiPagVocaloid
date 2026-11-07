@@ -15,7 +15,7 @@
             --height-vh40: 40vh;
             --grid-template-rows-indice: 1.5em minmax(0,0fr);
             --grid-template-rows-indiceabierto: 1.5em minmax(0, 1fr);
-            --top-vh10: 10vh;
+            --inset-vh10: 10vh;
             --max-width-prcnt75: 75%;
         }
     </style>
@@ -24,7 +24,7 @@
     <header>
         <h1 class="pl-4 text-3xl font-bold"><a class="text-current no-underline" href="../index.html">Vocaloid & Más</a></h1>
         <nav class="flex flex-initial pr-4">
-            <button class="bg-white/5 rounded-full size-px50 cursor-pointer px630:hidden" type="button" onclick="menudesplegable()"><img class="max-w-prcnt75" class="justify-self-center" src="../svg/menu.svg"></button>
+            <button class="bg-white/5 rounded-full size-px50 cursor-pointer px630:hidden" type="button" onclick="menudesplegable()"><img class="justify-self-center" src="../svg/menu.svg"></button>
             <ul id="barranav" class="hidden list-none gap-4 p-2 flex-wrap flex-col [&.barranav]:flex min-px630:flex min-px630:gap-8 min-px630:flex-row">
                 <li class="hover:scale-105"><a class="text-current no-underline" href="./personajes.html">personajes</a></li>
                 <li class="hover:scale-105"><a class="text-current no-underline" href="./artistas.html">artistas</a></li>
@@ -34,6 +34,10 @@
     </header>
     <main>
         <div class="banner flex justify-self-center w-4/5 h-vh20 md:h-vh40 bg-[url('https://images3.alphacoders.com/763/763716.png')] bg-cover bg-no-repeat"></div>
+        <div class="modalBannerCompleto flex flex-col fixed inset-0 bg-black/75 z-20 opacity-0 pointer-events-none [&.bannerCompletoAbierto]:opacity-100 [&.bannerCompletoAbierto]:pointer-events-auto transition-opacity duration-500 transition-discrete">
+            <div class="cerrarBannerCompleto"><a href="#" class="cierraBannerCompleto bg-red-500 py-1 px-3 absolute rounded-full flex justify-self-end">x</a></div>
+            <div class="bannerCompleto m-auto w-11/12 max-w-screen-lg max-h-screen"><a href="https://www.deviantart.com/riyumiiart/art/LOL%2C-TITLE-!-NO-WAY-NOOO-UGH-381003691" rel="noopener" title="link a la obra en DevianArt"><img class="" src="../img/personajesVocaloid.png" alt="imagen de Gumi, Miku, Rin, Len, Kaito, Luka y Meiko por riyumiiart en DevianArt"></a></div>
+        </div>
         <div class="indice grid grid-rows-indice [&.indiceAbierto]:grid-rows-indiceabierto self-start border ml-4 place-items-center transition-grid duration-300 ease py-4 px-8 select-none overflow-hidden rounded-lg">
             <div class="tituloIndice cursor-pointer">
                 <h2 class="font-bold">Indice</h2>
