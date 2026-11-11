@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi galeria de favs de Vocaloid y más</title>
+    <link rel="stylesheet" href="../../../../css/tailwindcss.css">
+    <script src="../../../js/general.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    </style>
+    <style type="text/tailwindcss">
+        @theme{
+            --size-px50: 50px;
+            --breakpoint-px630: 630px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="pl-4 text-3xl font-bold"><a class="text-current no-underline" href="../../../../index.html">Vocaloid & Más</a></h1>
+        <nav class="flex flex-initial pr-4">
+            <button class="bg-white/5 rounded-full size-px50 cursor-pointer px630:hidden" type="button" onclick="menudesplegable()"><img class="justify-self-center" src="../../../../svg/menu.svg"></button>
+            <ul id="barranav" class="hidden list-none gap-4 p-2 flex-wrap flex-col [&.barranav]:flex min-px630:flex min-px630:gap-8 min-px630:flex-row">
+                <li class="hover:scale-105"><a class="text-current no-underline" href="../../../personajes.html">personajes</a></li>
+                <li class="hover:scale-105"><a class="text-current no-underline" href="../../../artistas.html">artistas</a></li>
+                <li class="hover:scale-105"><a class="text-current no-underline" href="../../../canciones.html">canciones</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="tablas w-11/12">
+            <table class="relative w-full border border-collapse my-12 mx-0">
+                <thead>
+                    <caption class="p-4 font-sans text-2xl border" colspan="2">
+                        <span class="w-max" title="Nombre de la canción">Lag Train</span>
+                    </caption>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="border text-center p-4 font-playfair my-0 mx-auto content-start flex flex-col place-items-center">
+                            <span class="w-max" title="Voces">Kaai Yuki</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="border text-center p-4 font-playfair my-0 mx-auto content-start flex flex-col place-items-center">
+                            <div class="MVdeCancion mt-4 w-full">
+                                <iframe class="m-auto aspect-video max-w-xl" src="https://www.youtube.com/embed/UnIhRpIT7nc?si=lZredwKc0pSDtYRI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <footer>
+        <p>Este es un proyecto personal sin fines de lucro creado por fans y para fans con fines educativos y de entretenimiento. <br>
+        VOCALOID™ es una marca registrada de Yamaha Corporation. Todos los personajes (como Hatsune Miku, Kagamine Rin/Len, Megurine Luka, etc.), ilustraciones, nombres de artistas y canciones son propiedad de sus respectivos creadores y compañías (como Crypton Future Media, Yamaha, entre otros). No se pretende infringir ningún derecho de autor.</p>
+    </footer>
+</body>
+</html>
