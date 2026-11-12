@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canciones de NAKISO | Vocaloid & Más</title>
+    <link rel="stylesheet" href="../../../css/tailwindcss.css">
+    <script src="../../../js/general.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+        @theme{
+            --size-px50: 50px;
+            --breakpoint-px630: 630px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="pl-4 text-3xl font-bold"><a class="text-current no-underline" href="../../../index.html">Vocaloid & Más</a></h1>
+        <nav class="flex flex-initial pr-4">
+            <button class="bg-white/5 rounded-full size-px50 cursor-pointer px630:hidden" type="button" onclick="menudesplegable()"><img class="justify-self-center" src="../../../svg/menu.svg" alt="Abrir menú"></button>
+            <ul id="barranav" class="hidden list-none gap-4 p-2 flex-wrap flex-col [&.barranav]:flex min-px630:flex min-px630:gap-8 min-px630:flex-row">
+                <li class="hover:scale-105"><a class="text-current no-underline" href="../../personajes.html">personajes</a></li>
+                <li class="hover:scale-105"><a class="text-current no-underline" href="../../artistas.html">artistas</a></li>
+                <li class="hover:scale-105"><a class="text-current no-underline" href="../../canciones.html">canciones</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="tablas w-11/12">
+            <table class="relative w-full border border-collapse my-12 mx-0">
+                <thead>
+                    <caption class="p-4 font-sans text-2xl border" colspan="2">
+                        Algunas canciones de NAKISO que me gustan
+                    </caption>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="border text-center p-4 font-playfair my-0 mx-auto content-start flex flex-col place-items-center">
+                            <a href="./cancionesdenakiso/RetryNow.html">Retry Now</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="border text-center p-4 font-playfair my-0 mx-auto content-start flex flex-col place-items-center">
+                            <a href="./cancionesdenakiso/BAKENOHANA.html">BAKENOHANA</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="border text-center p-4 font-playfair my-0 mx-auto content-start flex flex-col place-items-center">
+                            <a href="./cancionesdenakiso/MINAGOROSHI.html">MINAGOROSHI</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <footer>
+        <p>Este es un proyecto personal sin fines de lucro creado por fans y para fans con fines educativos y de entretenimiento. <br>
+        VOCALOID™ es una marca registrada de Yamaha Corporation. Todos los personajes (como Hatsune Miku, Kagamine Rin/Len, Megurine Luka, etc.), ilustraciones, nombres de artistas y canciones son propiedad de sus respectivos creadores y compañías (como Crypton Future Media, Yamaha, entre otros). No se pretende infringir ningún derecho de autor.</p>
+    </footer>
+</body>
+</html>
