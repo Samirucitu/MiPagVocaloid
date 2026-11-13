@@ -27,6 +27,22 @@
         </nav>
     </header>
     <main>
+        <div class="flechasNavArtist flex self-end mr-4 gap-2">
+            <div class="anterior">
+                <button type="button" class="bg-white/5 cursor-pointer rounded-full" onclick="cambioArrow(-1)">
+                    <svg class="size-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <polyline points="15 18 9 12 15 6" />
+                    </svg>
+                </button>
+            </div>
+            <div class="siguiente">
+                <button type="button" class="bg-white/5 cursor-pointer rounded-full" onclick="cambioArrow(1)">
+                    <svg class="size-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <polyline points="9 18 15 12 9 6" />
+                    </svg>
+                </button>
+            </div>
+        </div>
         <div class="tablas w-11/12">
             <table class="relative w-full border border-collapse my-12 mx-0">
                 <thead>
