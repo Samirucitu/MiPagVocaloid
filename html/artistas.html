@@ -4,39 +4,300 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi galeria de favs de Vocaloid y más</title>
-    <link rel="stylesheet" href="../css/estilos general.css">
-    <script src="../js/general.js"></script>
+    <link rel="stylesheet" href="../css/tailwindcss.css">
+    <script src="../js/general.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+        @theme{
+            --size-px50: 50px;
+            --breakpoint-px630: 630px;
+            --grid-template-rows-indice: 1.5em minmax(0,0fr);
+            --grid-template-rows-indiceabierto: 1.5em minmax(0, 1fr);
+            --inset-vh10: 10vh;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1><a href="../index.html">Vocaloid & Más</a></h1>
-        <nav>
-            <button type="button" onclick="menudesplegable()"><img src="../svg/menu.svg"></button>
-            <ul id="barranav" class="barranav">
-                <li><a href="./personajes.html">personajes</a></li>
-                <li><a href="./artistas.html">artistas</a></li>
-                <li><a href="./canciones.html">canciones</a></li>
+        <h1 class="pl-4 text-3xl font-bold"><a class="text-current no-underline" href="../index.html">Vocaloid & Más</a></h1>
+        <nav class="flex flex-initial pr-4">
+            <button class="bg-white/5 rounded-full size-px50 cursor-pointer px630:hidden" type="button" onclick="menudesplegable()"><img class="justify-self-center" src="../svg/menu.svg"></button>
+            <ul id="barranav" class="hidden list-none gap-4 p-2 flex-wrap flex-col [&.barranav]:flex min-px630:flex min-px630:gap-8 min-px630:flex-row">
+                <li class="hover:scale-105"><a class="text-current no-underline" href="./personajes.html">personajes</a></li>
+                <li class="hover:scale-105"><a class="text-current no-underline" href="./artistas.html">artistas</a></li>
+                <li class="hover:scale-105"><a class="text-current no-underline" href="./canciones.html">canciones</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <div class="tablas">
-            <table id="tableArtistas">
+        <div class="indice grid grid-rows-indice [&.indiceAbierto]:grid-rows-indiceabierto self-start border ml-4 place-items-center transition-grid duration-300 ease py-4 px-8 select-none overflow-hidden rounded-lg">
+            <div class="tituloIndice cursor-pointer">
+                <h2 class="font-bold">Indice</h2>
+            </div>
+            <div class="lista ulindice overflow-hidden opacity-0 transition-opacity duration-75 ease pointer-events-none [&.visible]:opacity-100 [&.visible]:duration-2000 [&.visible]:pointer-events-auto">
+                <ol class="list-decimal pl-5">
+                    <li>
+                        <a class="text-current no-underline" href="#Maretu">Maretu</a>
+                    </li>
+                    <li>
+                        <a class="text-current no-underline" href="#Deco27">Deco 27</a>
+                    </li>
+                    <li>
+                        <a class="text-current no-underline" href="#Hachi">Hachi</a>
+                    </li>
+                    <li>
+                        <a class="text-current no-underline" href="#Kikuo">Kikuo</a>
+                    </li>
+                    <li>
+                        <a class="text-current no-underline" href="#Azari">Azari</a>
+                    </li>
+                    <li>
+                        <a class="text-current no-underline" href="#Eve">Eve</a>
+                    </li>
+                    <li>
+                        <a class="text-current no-underline" href="#PinocchioP">PinocchioP</a>
+                    </li>
+                    <li>
+                        <a class="text-current no-underline" href="#Inabakumori">Inabakumori</a>
+                    </li>
+                    <li>
+                        <a class="text-current no-underline" href="#ABM">ABM</a>
+                    </li>
+                    <li>
+                        <a class="text-current no-underline" href="#NAKISO">NAKISO</a>
+                    </li>
+                    <li>
+                        <a class="text-current no-underline" href="#Kanaria">Kanaria</a>
+                    </li>
+                    <li>
+                        <a class="text-current no-underline" href="#Kairikibear">Kairikibear</a>
+                    </li>
+                    <li>
+                        <a class="text-current no-underline" href="#Jon-Yakitori">Jon-Yakitori</a>
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div class="toTop hidden w-full justify-end pr-2.5 text-base sticky top-vh10 md:flex">
+            <a class="bg-black/5 rounded-2xl size-auto text-current border border-solid py-4 px-6 hover:scale-110" href="#">
+                Top
+            </a>
+        </div>
+        <div class="tablas w-3/4">
+            <table class="relative w-full border border-collapse my-12 mx-0" id="tableArtistas">
                 <thead>
-                    <caption>Artistas</caption>
+                    <caption class="p-4 font-sans text-2xl border" colspan="2">Artistas</caption>
                     <tr>
-                        <th>artista</th>
-                        <th>mis palabras ¯\_(•_•)_/¯</th>
+                        <th class="personajes border text-center p-4 font-playfair my-0 mx-auto hidden md:table-cell">artista</th>
+                        <th class="border text-center p-4 font-playfair my-0 mx-auto">mis palabras ¯\_(•_•)_/¯</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td></td>
-                        <td></td>
+                        <td class="personajes w-2/5 hidden md:w-2/5 md:table-cell border p-4 justify-items-center">
+                            <img class="max-w-40 rounded-full" src="../img/Maretu_ArtVocaloid.jpg">
+                        </td>
+                        <td id="Maretu" class="border text-center p-4 font-playfair my-0 mx-auto content-start">
+                            <a href="./artistas/Maretu/cancionesMaretu.html">Maretu</a>
+                            <ul class="pt-4">
+                                Canciones que más me gustan: <br><br>
+                                <li><a href="./artistas/Maretu/cancionesdemaretu/MindBrand.html">Mind brand</a></li>
+                                <li><a href="./artistas/Maretu/cancionesdemaretu/Aishiteitanoni.html">Aishiteitanoni</a></li>
+                                <li><a href="./artistas/Maretu/cancionesdemaretu/SIU.html">Suck It Up</a></li>
+                            </ul>
+                            <img class="personajeEnLaTabla table-column w-full mt-6 mx-auto max-w-40 md:hidden rounded-full" src="../img/Maretu_ArtVocaloid.jpg">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="personajes w-2/5 hidden md:w-2/5 md:table-cell border p-4 justify-items-center">
+                            <img class="max-w-40 rounded-full" src="../img/Deco27_ArtVocaloid.jpg">
+                        </td>
+                        <td id="Deco27" class="border text-center p-4 font-playfair my-0 mx-auto content-start">
+                            <a href="./artistas/Deco27/cancionesdeco.html">Deco 27</a>
+                            <ul class="pt-4">
+                                Canciones que más me gustan: <br><br>
+                                <li><a href="./artistas/Deco27/cancionesdedeco27/GhostRule.html">Ghost Rule</a></li>
+                                <li><a href="./artistas/Deco27/cancionesdedeco27/TheVampire.html">The Vampire</a></li>
+                                <li><a href="./artistas/Deco27/cancionesdedeco27/Monitoring.html">Monitoring</a></li>
+                            </ul>
+                            <img class="personajeEnLaTabla table-column w-full mt-6 mx-auto max-w-40 md:hidden rounded-full" src="../img/Deco27_ArtVocaloid.jpg">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="personajes w-2/5 hidden md:w-2/5 md:table-cell border p-4 justify-items-center">
+                            <img class="max-w-40 rounded-full" src="../img/Hachi_ArtVocaloid.jpg">
+                        </td>
+                        <td id="Hachi" class="border text-center p-4 font-playfair my-0 mx-auto content-start">
+                            <a href="./artistas/Hachi/cancioneshachi.html">Hachi</a>
+                            <ul class="pt-4">
+                                Canciones que más me gustan: <br><br>
+                                <li><a href="./artistas/Hachi/cancionesdehachi/Matryoshka.html">Matryoshka</a></li>
+                                <li><a href="./artistas/Hachi/cancionesdehachi/WardRoom305.html">Ward Room 305 - (Byoutou 305 Goushitsu)</a></li>
+                                <li><a href="./artistas/Hachi/cancionesdehachi/MrsPumpkinsComicaldream.html">Mrs. Pumpkin's Comical Dream</a></li>
+                            </ul>
+                            <img class="personajeEnLaTabla table-column w-full mt-6 mx-auto max-w-40 md:hidden rounded-full" src="../img/Hachi_ArtVocaloid.jpg">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="personajes w-2/5 hidden md:w-2/5 md:table-cell border p-4 justify-items-center">
+                            <img class="max-w-40 rounded-full" src="../img/Kikuo_ArtVocaloid.webp">
+                        </td>
+                        <td id="Kikuo" class="border text-center p-4 font-playfair my-0 mx-auto content-start">
+                            <a href="./artistas/Kikuo/cancionesKikuo.html">Kikuo</a>
+                            <ul class="pt-4">
+                                Canciones que más me gustan: <br><br>
+                                <li><a href="./artistas/Kikuo/cancionesdekikuo/shikabanenoodori.html">Shikabane no Odori</a></li>
+                                <li><a href="./artistas/Kikuo/cancionesdekikuo/aishiteaishiteaishite.html">Aishite Aishite Aishite</a></li>
+                                <li><a href="./artistas/Kikuo/cancionesdekikuo/pokkankaraa.html">Pokkan karaa</a></li>
+                            </ul>
+                            <img class="personajeEnLaTabla table-column w-full mt-6 mx-auto max-w-40 md:hidden rounded-full" src="../img/Kikuo_ArtVocaloid.webp">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="personajes w-2/5 hidden md:w-2/5 md:table-cell border p-4 justify-items-center">
+                            <img class="max-w-40 rounded-full" src="../img/Azari_ArtVocaloid.jpg">
+                        </td>
+                        <td id="Azari" class="border text-center p-4 font-playfair my-0 mx-auto content-start">
+                            <a href="./artistas/Azari/cancionesAzari.html">Azari</a>
+                            <ul class="pt-4">
+                                Canciones que más me gustan: <br><br>
+                                <li><a href="./artistas/Azari/cancionesdeazari/DNA.html">D/N/A</a></li>
+                                <li><a href="./artistas/Azari/cancionesdeazari/SellAFriend.html">Sell a Friend</a></li>
+                                <li><a href="./artistas/Azari/cancionesdeazari/ShadowShadow.html">Shadow Shadow</a></li>
+                            </ul>
+                            <img class="personajeEnLaTabla table-column w-full mt-6 mx-auto max-w-40 md:hidden rounded-full" src="../img/Azari_ArtVocaloid.jpg">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="personajes w-2/5 hidden md:w-2/5 md:table-cell border p-4 justify-items-center">
+                            <img class="max-w-40 rounded-full" src="../img/Eve_ArtVocaloid.jpg">
+                        </td>
+                        <td id="Eve" class="border text-center p-4 font-playfair my-0 mx-auto content-start">
+                            <a href="./artistas/Eve/cancionesEve.html">Eve</a>
+                            <br>Aunque tiene varias canciones que no son de un sintetizador como Vocaloid u otros, sí tiene canciones con Vocaloid
+                            <ul class="pt-4">
+                                Canciones que más me gustan: <br><br>
+                                <li><a href="./artistas/Eve/cancionesdeeve/Insomnia.html">Insomnia</a></li>
+                                <li><a href="./artistas/Eve/cancionesdeeve/GhostAvenue.html">Ghost Avenue</a></li>
+                                <li><a href="./artistas/Eve/cancionesdeeve/TokyoGhetto.html">Tokyo Ghetto</a></li>
+                            </ul>
+                            <img class="personajeEnLaTabla table-column w-full mt-6 mx-auto max-w-40 md:hidden rounded-full" src="../img/Eve_ArtVocaloid.jpg">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="personajes w-2/5 hidden md:w-2/5 md:table-cell border p-4 justify-items-center">
+                            <img class="max-w-40 rounded-full" src="../img/PinocchioP_ArtVocaloid.webp">
+                        </td>
+                        <td id="PinocchioP" class="border text-center p-4 font-playfair my-0 mx-auto content-start">
+                            <a href="./artistas/PinocchioP/cancionesPinocchioP.html">PinocchioP</a>
+                            <ul class="pt-4">
+                                Canciones que más me gustan: <br><br>
+                                <li><a href="./artistas/PinocchioP/cancionesdepinocchiop/God-ish.html">God-ish</a></li>
+                                <li><a href="./artistas/PinocchioP/cancionesdepinocchiop/LoveAttribute.html">Love Attribute</a></li>
+                                <li><a href="./artistas/PinocchioP/cancionesdepinocchiop/ReincarnationApple.html">Reincarnation Apple</a></li>
+                            </ul>
+                            <img class="personajeEnLaTabla table-column w-full mt-6 mx-auto max-w-40 md:hidden rounded-full" src="../img/PinocchioP_ArtVocaloid.webp">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="personajes w-2/5 hidden md:w-2/5 md:table-cell border p-4 justify-items-center">
+                            <img class="max-w-40 rounded-full" src="../img/Inabakumori_ArtVocaloid.webp">
+                        </td>
+                        <td id="Inabakumori" class="border text-center p-4 font-playfair my-0 mx-auto content-start">
+                            <a href="./artistas/Inabakumori/cancionesInabakumori.html">Inabakumori</a>
+                            <ul class="pt-4">
+                                Canciones que más me gustan: <br><br>
+                                <li><a href="./artistas/Inabakumori/cancionesdeinabakumori/LagTrain.html">Lag Train</a></li>
+                                <li><a href="./artistas/Inabakumori/cancionesdeinabakumori/LostUmbrella.html">Lost Umbrella</a></li>
+                                <li><a href="./artistas/Inabakumori/cancionesdeinabakumori/RelayOuter.html">Relay Outer</a></li>
+                            </ul>
+                            <img class="personajeEnLaTabla table-column w-full mt-6 mx-auto max-w-40 md:hidden rounded-full" src="../img/Inabakumori_ArtVocaloid.webp">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="personajes w-2/5 hidden md:w-2/5 md:table-cell border p-4 justify-items-center">
+                            <img class="max-w-40 rounded-full" src="../img/ABM_ArtVocaloid.jpg">
+                        </td>
+                        <td id="ABM" class="border text-center p-4 font-playfair my-0 mx-auto content-start">
+                            <a href="./artistas/ABM/cancionesABM.html">AnythingBecomeMoe
+                            <br>(ABM)</a>
+                            <ul class="pt-4">
+                                Canciones que más me gustan: <br><br>
+                                <li><a href="./artistas/ABM/cancionesdeabm/Yararara.html">Yararara</a></li>
+                                <li><a href="./artistas/ABM/cancionesdeabm/Signaling.html">Signaling</a></li>
+                                <li><a href="./artistas/ABM/cancionesdeabm/Mis-TakeRPG.html">Mis-Take RPG</a></li>
+                            </ul>
+                            <img class="personajeEnLaTabla table-column w-full mt-6 mx-auto max-w-40 md:hidden rounded-full" src="../img/ABM_ArtVocaloid.jpg">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="personajes w-2/5 hidden md:w-2/5 md:table-cell border p-4 justify-items-center">
+                            <img class="max-w-40 rounded-full" src="../img/NAKISO_ArtVocaloid.webp">
+                        </td>
+                        <td id="NAKISO" class="border text-center p-4 font-playfair my-0 mx-auto content-start">
+                            <a href="./artistas/NAKISO/cancionesNAKISO.html">NAKISO</a>
+                            <ul class="pt-4">
+                                Canciones que más me gustan: <br><br>
+                                <li><a href="./artistas/NAKISO/cancionesdenakiso/RetryNow.html">Retry Now</a></li>
+                                <li><a href="./artistas/NAKISO/cancionesdenakiso/BAKENOHANA.html">BAKENOHANA</a></li>
+                                <li><a href="./artistas/NAKISO/cancionesdenakiso/MINAGOROSHI.html">MINAGOROSHI</a></li>
+                            </ul>
+                            <img class="personajeEnLaTabla table-column w-full mt-6 mx-auto max-w-40 md:hidden rounded-full" src="../img/NAKISO_ArtVocaloid.webp">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="personajes w-2/5 hidden md:w-2/5 md:table-cell border p-4 justify-items-center">
+                            <img class="max-w-40 rounded-full" src="../img/Kanaria_ArtVocaloid.jpg">
+                        </td>
+                        <td id="Kanaria" class="border text-center p-4 font-playfair my-0 mx-auto content-start">
+                            <a href="./artistas/Kanaria/cancionesKanaria.html">Kanaria</a>
+                            <ul class="pt-4">
+                                Canciones que más me gustan: <br><br>
+                                <li><a href="./artistas/Kanaria/cancionesdekanaria/BRAIN.html">BRAIN</a></li>
+                                <li><a href="./artistas/Kanaria/cancionesdekanaria/CartoonGirl.html">CartoonGirl</a></li>
+                                <li><a href="./artistas/Kanaria/cancionesdekanaria/Yoidoreshirazu.html">Yoidoreshirazu</a></li>
+                            </ul>
+                            <img class="personajeEnLaTabla table-column w-full mt-6 mx-auto max-w-40 md:hidden rounded-full" src="../img/Kanaria_ArtVocaloid.jpg">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="personajes w-2/5 hidden md:w-2/5 md:table-cell border p-4 justify-items-center">
+                            <img class="max-w-40 rounded-full" src="../img/Kairikibear_ArtVocaloid.jpg">
+                        </td>
+                        <td id="Kairikibear" class="border text-center p-4 font-playfair my-0 mx-auto content-start">
+                            <a href="./artistas/Kairikibear/cancionesKairikibear.html">Kairiki bear</a>
+                            <ul class="pt-4">
+                                Canciones que más me gustan: <br><br>
+                                <li><a href="./artistas/Kairikibear/cancionesdekairikibear/Venom.html">Venom - (Venomu)</a></li>
+                                <li><a href="./artistas/Kairikibear/cancionesdekairikibear/Bug.html">Bug</a></li>
+                                <li><a href="./artistas/Kairikibear/cancionesdekairikibear/DARLINGDANCE.html">DARLING DANCE</a></li>
+                            </ul>
+                            <img class="personajeEnLaTabla table-column w-full mt-6 mx-auto max-w-40 md:hidden rounded-full" src="../img/Kairikibear_ArtVocaloid.jpg">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="personajes w-2/5 hidden md:w-2/5 md:table-cell border p-4 justify-items-center">
+                            <img class="max-w-40 rounded-full" src="../img/jon-Yakitori_ArtVocaloid.jpg">
+                        </td>
+                        <td id="Jon-Yakitori" class="border text-center p-4 font-playfair my-0 mx-auto content-start">
+                            <a href="./artistas/Jon-Yakitory/cancionesJon-Yakitory.html">Jon-Yakitory</a>
+                            <ul class="pt-4">
+                                Canciones que más me gustan: <br><br>
+                                <li><a href="./artistas/Jon-Yakitory/cancionesdeJon-Yakitory/KontonBoogie.html">Konton Boogie</a></li>
+                                <li><a href="./artistas/Jon-Yakitory/cancionesdeJon-Yakitory/AntiSystems.html">AntiSystem's</a></li>
+                                <li><a href="./artistas/Jon-Yakitory/cancionesdeJon-Yakitory/YamadaPerfect.html">Yamada Perfect</a></li>
+                            </ul>
+                            <img class="personajeEnLaTabla table-column w-full mt-6 mx-auto max-w-40 md:hidden rounded-full" src="../img/jon-Yakitori_ArtVocaloid.jpg">
+                        </td>
                     </tr>
                 </tbody>
             </table>
+        </div>
+        <div id="abajo" class="toTop relative flex inset-0 md:hidden self-start pl-4">
+            <a class="bg-black/5 border rounded-2xl size-auto text-current py-4 px-6 hover:scale-110" href="#">
+                Top
+            </a>
         </div>
     </main>
 
