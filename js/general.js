@@ -1,11 +1,11 @@
+"use strict";
 //menu desplegable
 function menudesplegable() {
     const aparecemenudesplegable = document.querySelector("#barranav");
     aparecemenudesplegable.classList.toggle("barranav");
-} 
-
+}
+//pagina actual
 const pagActual = window.location.pathname.split("/").pop();
-
 //indice
 const indice = document.querySelector(".indice");
 if (indice) {
@@ -16,7 +16,6 @@ if (indice) {
         ulindice.classList.toggle('visible');
     });
 }
-
 //banner
 const bannerGeneral = document.querySelector(".bannerGeneral");
 if (bannerGeneral) {
@@ -31,15 +30,14 @@ if (bannerGeneral) {
         modalBanner.classList.remove("bannerCompletoAbierto");
     });
 }
-
 //flechasNavArtist en canciones de artistas
 const flechasNavArtist = document.querySelector(".flechasNavArtist");
 if (flechasNavArtist) {
-    const artistas = {
+    var artistas = {
         Maretu: ["MindBrand.html", "Aishiteitanoni.html", "SIU.html"],
         Deco27: ["GhostRule.html", "TheVampire.html", "Monitoring.html"],
         Hachi: ["Matryoshka.html", "WardRoom305.html", "MrsPumpkinsComicaldream.html"],
-        Kikuo: ["shikabanenoodori.html", "aishiteaishiteaishite.html","pokkankaraa.html"],
+        Kikuo: ["shikabanenoodori.html", "aishiteaishiteaishite.html", "pokkankaraa.html"],
         Azari: ["DNA.html", "SellAFriend.html", "ShadowShadow.html"],
         Eve: ["Insomnia.html", "GhostAvenue.html", "TokyoGhetto.html"],
         PinocchioP: ["God-ish.html", "LoveAttribute.html", "ReincarnationApple.html"],
@@ -50,15 +48,15 @@ if (flechasNavArtist) {
         Kairikibear: ["Venom.html", "Bug.html", "DARLINGDANCE.html"],
         'Jon-Yakitori': ["KontonBoogie.html", "AntiSystems.html", "YamadaPerfect.html"]
     };
-    function cambioArrow(direccion) {
-        for (const artista in artistas) {
-            const canciones = artistas[artista];
-            const cancionActual = canciones.indexOf(pagActual);
-            if (cancionActual !== -1) {
-                const cambiaCancion = (cancionActual + direccion + canciones.length) % canciones.length;
-                location.href = canciones[cambiaCancion];
-                break
-            }
+}
+function cambioArrow(direccion) {
+    for (const artista in artistas) {
+        const canciones = artistas[artista];
+        const cancionActual = canciones.indexOf(pagActual);
+        if (cancionActual !== -1) {
+            const cambiaCancion = (cancionActual + direccion + canciones.length) % canciones.length;
+            location.href = canciones[cambiaCancion];
+            break;
         }
     }
 }
