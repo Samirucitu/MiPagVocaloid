@@ -11,7 +11,7 @@ function getHtmlInputs(dir: string, inputs: Record<string, string> = {}) {
         if (statSync(fullPath).isDirectory()) {
             getHtmlInputs(fullPath, inputs)
         } else if (file.endsWith('.html')) {
-            const name = fullPath.replace(resolve(__dirname) + '\\', '').replace(resolve(__dirname) + '/', '').replace(/\.html$/, '')
+            const name = fullPath.replace(resolve(import.meta.dirname) + '\\', '').replace(resolve(import.meta.dirname) + '/', '').replace(/\.html$/, '')
             inputs[name] = fullPath
         }
     }
@@ -19,10 +19,11 @@ function getHtmlInputs(dir: string, inputs: Record<string, string> = {}) {
 }
 
 export default defineConfig({
+    base: '/MiPagVocaloid/',
     plugins: [tailwindcss()],
     build: {
         rollupOptions: {
-            input: getHtmlInputs(__dirname),
+            input: getHtmlInputs(import.meta.dirname),
         },
     },
 })
