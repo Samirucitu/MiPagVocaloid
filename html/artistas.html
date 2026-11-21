@@ -4,24 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi galeria de favs de Vocaloid y más</title>
-    <link rel="stylesheet" href="../css/tailwindcss.css">
-    <script src="../js/general.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <style type="text/tailwindcss">
-        @theme{
-            --size-px50: 50px;
-            --breakpoint-px630: 630px;
-            --grid-template-rows-indice: 1.5em minmax(0,0fr);
-            --grid-template-rows-indiceabierto: 1.5em minmax(0, 1fr);
-            --inset-vh10: 10vh;
-        }
-    </style>
+    <script type="module" src="/src/general.ts"></script>
+
 </head>
 <body>
     <header>
-        <h1 class="pl-4 text-3xl font-bold"><a class="text-current no-underline" href="../index.html">Vocaloid & Más</a></h1>
-        <nav class="flex flex-initial pr-4">
-            <button class="bg-white/5 rounded-full size-px50 cursor-pointer px630:hidden" type="button" onclick="menudesplegable()"><img class="justify-self-center" src="../svg/menu.svg"></button>
+        <h1 class="pl-4 text-3xl font-bold"><a class="text-current no-underline" href="/index.html">Vocaloid & Más</a></h1>
+        <nav id="menuDesplegable" class="flex flex-initial pr-4">
+            <button class="bg-white/5 rounded-full size-px50 cursor-pointer px630:hidden" type="button"><img class="justify-self-center" src="/svg/menu.svg"></button>
             <ul id="barranav" class="hidden list-none gap-4 p-2 flex-wrap flex-col [&.barranav]:flex min-px630:flex min-px630:gap-8 min-px630:flex-row">
                 <li class="hover:scale-105"><a class="text-current no-underline" href="./personajes.html">personajes</a></li>
                 <li class="hover:scale-105"><a class="text-current no-underline" href="./artistas.html">artistas</a></li>
@@ -96,7 +86,7 @@
                 <tbody>
                     <tr>
                         <td class="personajes w-2/5 hidden md:w-2/5 md:table-cell border p-4 justify-items-center">
-                            <img class="max-w-40 rounded-full" src="../img/Maretu_ArtVocaloid.jpg">
+                            <img class="max-w-40 rounded-full" src="/img/Maretu_ArtVocaloid.jpg">
                         </td>
                         <td id="Maretu" class="border text-center p-4 font-playfair my-0 mx-auto content-start">
                             <a href="./artistas/Maretu/cancionesMaretu.html">Maretu</a>
@@ -106,12 +96,12 @@
                                 <li><a href="./artistas/Maretu/cancionesdemaretu/Aishiteitanoni.html">Aishiteitanoni</a></li>
                                 <li><a href="./artistas/Maretu/cancionesdemaretu/SIU.html">Suck It Up</a></li>
                             </ul>
-                            <img class="personajeEnLaTabla table-column w-full mt-6 mx-auto max-w-40 md:hidden rounded-full" src="../img/Maretu_ArtVocaloid.jpg">
+                            <img class="personajeEnLaTabla table-column w-full mt-6 mx-auto max-w-40 md:hidden rounded-full" src="/img/Maretu_ArtVocaloid.jpg">
                         </td>
                     </tr>
                     <tr>
                         <td class="personajes w-2/5 hidden md:w-2/5 md:table-cell border p-4 justify-items-center">
-                            <img class="max-w-40 rounded-full" src="../img/Deco27_ArtVocaloid.jpg">
+                            <img class="max-w-40 rounded-full" src="/img/Deco27_ArtVocaloid.jpg">
                         </td>
                         <td id="Deco27" class="border text-center p-4 font-playfair my-0 mx-auto content-start">
                             <a href="./artistas/Deco27/cancionesdeco.html">Deco 27</a>
@@ -121,12 +111,12 @@
                                 <li><a href="./artistas/Deco27/cancionesdedeco27/TheVampire.html">The Vampire</a></li>
                                 <li><a href="./artistas/Deco27/cancionesdedeco27/Monitoring.html">Monitoring</a></li>
                             </ul>
-                            <img class="personajeEnLaTabla table-column w-full mt-6 mx-auto max-w-40 md:hidden rounded-full" src="../img/Deco27_ArtVocaloid.jpg">
+                            <img class="personajeEnLaTabla table-column w-full mt-6 mx-auto max-w-40 md:hidden rounded-full" src="/img/Deco27_ArtVocaloid.jpg">
                         </td>
                     </tr>
                     <tr>
                         <td class="personajes w-2/5 hidden md:w-2/5 md:table-cell border p-4 justify-items-center">
-                            <img class="max-w-40 rounded-full" src="../img/Hachi_ArtVocaloid.jpg">
+                            <img class="max-w-40 rounded-full" src="/img/Hachi_ArtVocaloid.jpg">
                         </td>
                         <td id="Hachi" class="border text-center p-4 font-playfair my-0 mx-auto content-start">
                             <a href="./artistas/Hachi/cancioneshachi.html">Hachi</a>
@@ -136,12 +126,12 @@
                                 <li><a href="./artistas/Hachi/cancionesdehachi/WardRoom305.html">Ward Room 305 - (Byoutou 305 Goushitsu)</a></li>
                                 <li><a href="./artistas/Hachi/cancionesdehachi/MrsPumpkinsComicaldream.html">Mrs. Pumpkin's Comical Dream</a></li>
                             </ul>
-                            <img class="personajeEnLaTabla table-column w-full mt-6 mx-auto max-w-40 md:hidden rounded-full" src="../img/Hachi_ArtVocaloid.jpg">
+                            <img class="personajeEnLaTabla table-column w-full mt-6 mx-auto max-w-40 md:hidden rounded-full" src="/img/Hachi_ArtVocaloid.jpg">
                         </td>
                     </tr>
                     <tr>
                         <td class="personajes w-2/5 hidden md:w-2/5 md:table-cell border p-4 justify-items-center">
-                            <img class="max-w-40 rounded-full" src="../img/Kikuo_ArtVocaloid.webp">
+                            <img class="max-w-40 rounded-full" src="/img/Kikuo_ArtVocaloid.webp">
                         </td>
                         <td id="Kikuo" class="border text-center p-4 font-playfair my-0 mx-auto content-start">
                             <a href="./artistas/Kikuo/cancionesKikuo.html">Kikuo</a>
@@ -151,12 +141,12 @@
                                 <li><a href="./artistas/Kikuo/cancionesdekikuo/aishiteaishiteaishite.html">Aishite Aishite Aishite</a></li>
                                 <li><a href="./artistas/Kikuo/cancionesdekikuo/pokkankaraa.html">Pokkan karaa</a></li>
                             </ul>
-                            <img class="personajeEnLaTabla table-column w-full mt-6 mx-auto max-w-40 md:hidden rounded-full" src="../img/Kikuo_ArtVocaloid.webp">
+                            <img class="personajeEnLaTabla table-column w-full mt-6 mx-auto max-w-40 md:hidden rounded-full" src="/img/Kikuo_ArtVocaloid.webp">
                         </td>
                     </tr>
                     <tr>
                         <td class="personajes w-2/5 hidden md:w-2/5 md:table-cell border p-4 justify-items-center">
-                            <img class="max-w-40 rounded-full" src="../img/Azari_ArtVocaloid.jpg">
+                            <img class="max-w-40 rounded-full" src="/img/Azari_ArtVocaloid.jpg">
                         </td>
                         <td id="Azari" class="border text-center p-4 font-playfair my-0 mx-auto content-start">
                             <a href="./artistas/Azari/cancionesAzari.html">Azari</a>
@@ -166,12 +156,12 @@
                                 <li><a href="./artistas/Azari/cancionesdeazari/SellAFriend.html">Sell a Friend</a></li>
                                 <li><a href="./artistas/Azari/cancionesdeazari/ShadowShadow.html">Shadow Shadow</a></li>
                             </ul>
-                            <img class="personajeEnLaTabla table-column w-full mt-6 mx-auto max-w-40 md:hidden rounded-full" src="../img/Azari_ArtVocaloid.jpg">
+                            <img class="personajeEnLaTabla table-column w-full mt-6 mx-auto max-w-40 md:hidden rounded-full" src="/img/Azari_ArtVocaloid.jpg">
                         </td>
                     </tr>
                     <tr>
                         <td class="personajes w-2/5 hidden md:w-2/5 md:table-cell border p-4 justify-items-center">
-                            <img class="max-w-40 rounded-full" src="../img/Eve_ArtVocaloid.jpg">
+                            <img class="max-w-40 rounded-full" src="/img/Eve_ArtVocaloid.jpg">
                         </td>
                         <td id="Eve" class="border text-center p-4 font-playfair my-0 mx-auto content-start">
                             <a href="./artistas/Eve/cancionesEve.html">Eve</a>
@@ -182,12 +172,12 @@
                                 <li><a href="./artistas/Eve/cancionesdeeve/GhostAvenue.html">Ghost Avenue</a></li>
                                 <li><a href="./artistas/Eve/cancionesdeeve/TokyoGhetto.html">Tokyo Ghetto</a></li>
                             </ul>
-                            <img class="personajeEnLaTabla table-column w-full mt-6 mx-auto max-w-40 md:hidden rounded-full" src="../img/Eve_ArtVocaloid.jpg">
+                            <img class="personajeEnLaTabla table-column w-full mt-6 mx-auto max-w-40 md:hidden rounded-full" src="/img/Eve_ArtVocaloid.jpg">
                         </td>
                     </tr>
                     <tr>
                         <td class="personajes w-2/5 hidden md:w-2/5 md:table-cell border p-4 justify-items-center">
-                            <img class="max-w-40 rounded-full" src="../img/PinocchioP_ArtVocaloid.webp">
+                            <img class="max-w-40 rounded-full" src="/img/PinocchioP_ArtVocaloid.webp">
                         </td>
                         <td id="PinocchioP" class="border text-center p-4 font-playfair my-0 mx-auto content-start">
                             <a href="./artistas/PinocchioP/cancionesPinocchioP.html">PinocchioP</a>
@@ -197,12 +187,12 @@
                                 <li><a href="./artistas/PinocchioP/cancionesdepinocchiop/LoveAttribute.html">Love Attribute</a></li>
                                 <li><a href="./artistas/PinocchioP/cancionesdepinocchiop/ReincarnationApple.html">Reincarnation Apple</a></li>
                             </ul>
-                            <img class="personajeEnLaTabla table-column w-full mt-6 mx-auto max-w-40 md:hidden rounded-full" src="../img/PinocchioP_ArtVocaloid.webp">
+                            <img class="personajeEnLaTabla table-column w-full mt-6 mx-auto max-w-40 md:hidden rounded-full" src="/img/PinocchioP_ArtVocaloid.webp">
                         </td>
                     </tr>
                     <tr>
                         <td class="personajes w-2/5 hidden md:w-2/5 md:table-cell border p-4 justify-items-center">
-                            <img class="max-w-40 rounded-full" src="../img/Inabakumori_ArtVocaloid.webp">
+                            <img class="max-w-40 rounded-full" src="/img/Inabakumori_ArtVocaloid.webp">
                         </td>
                         <td id="Inabakumori" class="border text-center p-4 font-playfair my-0 mx-auto content-start">
                             <a href="./artistas/Inabakumori/cancionesInabakumori.html">Inabakumori</a>
@@ -212,12 +202,12 @@
                                 <li><a href="./artistas/Inabakumori/cancionesdeinabakumori/LostUmbrella.html">Lost Umbrella</a></li>
                                 <li><a href="./artistas/Inabakumori/cancionesdeinabakumori/RelayOuter.html">Relay Outer</a></li>
                             </ul>
-                            <img class="personajeEnLaTabla table-column w-full mt-6 mx-auto max-w-40 md:hidden rounded-full" src="../img/Inabakumori_ArtVocaloid.webp">
+                            <img class="personajeEnLaTabla table-column w-full mt-6 mx-auto max-w-40 md:hidden rounded-full" src="/img/Inabakumori_ArtVocaloid.webp">
                         </td>
                     </tr>
                     <tr>
                         <td class="personajes w-2/5 hidden md:w-2/5 md:table-cell border p-4 justify-items-center">
-                            <img class="max-w-40 rounded-full" src="../img/ABM_ArtVocaloid.jpg">
+                            <img class="max-w-40 rounded-full" src="/img/ABM_ArtVocaloid.jpg">
                         </td>
                         <td id="ABM" class="border text-center p-4 font-playfair my-0 mx-auto content-start">
                             <a href="./artistas/ABM/cancionesABM.html">AnythingBecomeMoe
@@ -228,12 +218,12 @@
                                 <li><a href="./artistas/ABM/cancionesdeabm/Signaling.html">Signaling</a></li>
                                 <li><a href="./artistas/ABM/cancionesdeabm/Mis-TakeRPG.html">Mis-Take RPG</a></li>
                             </ul>
-                            <img class="personajeEnLaTabla table-column w-full mt-6 mx-auto max-w-40 md:hidden rounded-full" src="../img/ABM_ArtVocaloid.jpg">
+                            <img class="personajeEnLaTabla table-column w-full mt-6 mx-auto max-w-40 md:hidden rounded-full" src="/img/ABM_ArtVocaloid.jpg">
                         </td>
                     </tr>
                     <tr>
                         <td class="personajes w-2/5 hidden md:w-2/5 md:table-cell border p-4 justify-items-center">
-                            <img class="max-w-40 rounded-full" src="../img/NAKISO_ArtVocaloid.webp">
+                            <img class="max-w-40 rounded-full" src="/img/NAKISO_ArtVocaloid.webp">
                         </td>
                         <td id="NAKISO" class="border text-center p-4 font-playfair my-0 mx-auto content-start">
                             <a href="./artistas/NAKISO/cancionesNAKISO.html">NAKISO</a>
@@ -243,12 +233,12 @@
                                 <li><a href="./artistas/NAKISO/cancionesdenakiso/BAKENOHANA.html">BAKENOHANA</a></li>
                                 <li><a href="./artistas/NAKISO/cancionesdenakiso/MINAGOROSHI.html">MINAGOROSHI</a></li>
                             </ul>
-                            <img class="personajeEnLaTabla table-column w-full mt-6 mx-auto max-w-40 md:hidden rounded-full" src="../img/NAKISO_ArtVocaloid.webp">
+                            <img class="personajeEnLaTabla table-column w-full mt-6 mx-auto max-w-40 md:hidden rounded-full" src="/img/NAKISO_ArtVocaloid.webp">
                         </td>
                     </tr>
                     <tr>
                         <td class="personajes w-2/5 hidden md:w-2/5 md:table-cell border p-4 justify-items-center">
-                            <img class="max-w-40 rounded-full" src="../img/Kanaria_ArtVocaloid.jpg">
+                            <img class="max-w-40 rounded-full" src="/img/Kanaria_ArtVocaloid.jpg">
                         </td>
                         <td id="Kanaria" class="border text-center p-4 font-playfair my-0 mx-auto content-start">
                             <a href="./artistas/Kanaria/cancionesKanaria.html">Kanaria</a>
@@ -258,12 +248,12 @@
                                 <li><a href="./artistas/Kanaria/cancionesdekanaria/CartoonGirl.html">CartoonGirl</a></li>
                                 <li><a href="./artistas/Kanaria/cancionesdekanaria/Yoidoreshirazu.html">Yoidoreshirazu</a></li>
                             </ul>
-                            <img class="personajeEnLaTabla table-column w-full mt-6 mx-auto max-w-40 md:hidden rounded-full" src="../img/Kanaria_ArtVocaloid.jpg">
+                            <img class="personajeEnLaTabla table-column w-full mt-6 mx-auto max-w-40 md:hidden rounded-full" src="/img/Kanaria_ArtVocaloid.jpg">
                         </td>
                     </tr>
                     <tr>
                         <td class="personajes w-2/5 hidden md:w-2/5 md:table-cell border p-4 justify-items-center">
-                            <img class="max-w-40 rounded-full" src="../img/Kairikibear_ArtVocaloid.jpg">
+                            <img class="max-w-40 rounded-full" src="/img/Kairikibear_ArtVocaloid.jpg">
                         </td>
                         <td id="Kairikibear" class="border text-center p-4 font-playfair my-0 mx-auto content-start">
                             <a href="./artistas/Kairikibear/cancionesKairikibear.html">Kairiki bear</a>
@@ -273,12 +263,12 @@
                                 <li><a href="./artistas/Kairikibear/cancionesdekairikibear/Bug.html">Bug</a></li>
                                 <li><a href="./artistas/Kairikibear/cancionesdekairikibear/DARLINGDANCE.html">DARLING DANCE</a></li>
                             </ul>
-                            <img class="personajeEnLaTabla table-column w-full mt-6 mx-auto max-w-40 md:hidden rounded-full" src="../img/Kairikibear_ArtVocaloid.jpg">
+                            <img class="personajeEnLaTabla table-column w-full mt-6 mx-auto max-w-40 md:hidden rounded-full" src="/img/Kairikibear_ArtVocaloid.jpg">
                         </td>
                     </tr>
                     <tr>
                         <td class="personajes w-2/5 hidden md:w-2/5 md:table-cell border p-4 justify-items-center">
-                            <img class="max-w-40 rounded-full" src="../img/jon-Yakitori_ArtVocaloid.jpg">
+                            <img class="max-w-40 rounded-full" src="/img/jon-Yakitori_ArtVocaloid.jpg">
                         </td>
                         <td id="Jon-Yakitori" class="border text-center p-4 font-playfair my-0 mx-auto content-start">
                             <a href="./artistas/Jon-Yakitory/cancionesJon-Yakitory.html">Jon-Yakitory</a>
@@ -288,7 +278,7 @@
                                 <li><a href="./artistas/Jon-Yakitory/cancionesdeJon-Yakitory/AntiSystems.html">AntiSystem's</a></li>
                                 <li><a href="./artistas/Jon-Yakitory/cancionesdeJon-Yakitory/YamadaPerfect.html">Yamada Perfect</a></li>
                             </ul>
-                            <img class="personajeEnLaTabla table-column w-full mt-6 mx-auto max-w-40 md:hidden rounded-full" src="../img/jon-Yakitori_ArtVocaloid.jpg">
+                            <img class="personajeEnLaTabla table-column w-full mt-6 mx-auto max-w-40 md:hidden rounded-full" src="/img/jon-Yakitori_ArtVocaloid.jpg">
                         </td>
                     </tr>
                 </tbody>
