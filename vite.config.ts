@@ -1,20 +1,31 @@
 import { defineConfig } from 'vite'
 import tailwindcss from '@tailwindcss/vite'
-import { resolve } from 'path'
-import { readdirSync, statSync } from 'fs'
+import { resolve, relative } from 'node:path'
+import { readdirSync } from 'node:fs'
 
-// Busca automáticamente todos los .html en la raíz y dentro de /html
-function getHtmlInputs(dir: string, inputs: Record<string, string> = {}) {
-    for (const file of readdirSync(dir)) {
-        if (file === 'node_modules' || file === 'dist' || file.startsWith('.')) continue
-        const fullPath = resolve(dir, file)
-        if (statSync(fullPath).isDirectory()) {
-            getHtmlInputs(fullPath, inputs)
-        } else if (file.endsWith('.html')) {
-            const name = fullPath.replace(resolve(import.meta.dirname) + '\\', '').replace(resolve(import.meta.dirname) + '/', '').replace(/\.html$/, '')
+function getHtmlInputs(
+    directory: string,
+    root = directory,
+    inputs: Record<string, string> = {},
+) {
+    for (const entry of readdirSync(directory, { withFileTypes: true })) {
+        if (entry.name.startsWith('.') || ['node_modules', 'dist'].includes(entry.name)) {
+            continue
+        }
+
+        const fullPath = resolve(directory, entry.name)
+
+        if (entry.isDirectory()) {
+            getHtmlInputs(fullPath, root, inputs)
+        } else if (entry.isFile() && entry.name.endsWith('.html')) {
+            const name = relative(root, fullPath)
+                .replace(/\\/g, '/')
+                .replace(/\.html$/, '')
+
             inputs[name] = fullPath
         }
     }
+
     return inputs
 }
 
