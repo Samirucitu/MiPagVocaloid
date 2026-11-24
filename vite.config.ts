@@ -2,6 +2,8 @@ import { defineConfig } from 'vite'
 import tailwindcss from '@tailwindcss/vite'
 import { resolve, relative } from 'node:path'
 import { readdirSync } from 'node:fs'
+import handlebars from 'vite-plugin-handlebars';
+
 
 function getHtmlInputs(
     directory: string,
@@ -29,9 +31,13 @@ function getHtmlInputs(
     return inputs
 }
 
+
+
 export default defineConfig({
     base: '/MiPagVocaloid/',
-    plugins: [tailwindcss()],
+    plugins: [handlebars({
+        partialDirectory: resolve(import.meta.dirname, 'partials')
+    }), tailwindcss()],
     build: {
         rollupOptions: {
             input: getHtmlInputs(import.meta.dirname),
