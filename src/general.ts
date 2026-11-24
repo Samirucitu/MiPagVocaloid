@@ -37,22 +37,7 @@ if (bannerGeneral) {
 }
 
 //flechasNavArtist en canciones de artistas
-    /* const artistas: Record<string, string[]> = {
-        Maretu: ["MindBrand.html", "Aishiteitanoni.html", "SIU.html"],
-        Deco27: ["GhostRule.html", "TheVampire.html", "Monitoring.html"],
-        Hachi: ["Matryoshka.html", "WardRoom305.html", "MrsPumpkinsComicaldream.html"],
-        Kikuo: ["shikabanenoodori.html", "aishiteaishiteaishite.html","pokkankaraa.html"],
-        Azari: ["DNA.html", "SellAFriend.html", "ShadowShadow.html"],
-        Eve: ["Insomnia.html", "GhostAvenue.html", "TokyoGhetto.html"],
-        PinocchioP: ["God-ish.html", "LoveAttribute.html", "ReincarnationApple.html"],
-        Inabakumori: ["LagTrain.html", "LostUmbrella.html", "RelayOuter.html"],
-        ABM: ["Yararara.html", "Signaling.html", "Mis-TakeRPG.html"],
-        NAKISO: ["RetryNow.html", "BAKENOHANA.html", "MINAGOROSHI.html"],
-        Kanaria: ["BRAIN.html", "CartoonGirl.html", "Yoidoreshirazu.html"],
-        Kairikibear: ["Venom.html", "Bug.html", "DARLINGDANCE.html"],
-        'Jon-Yakitori': ["KontonBoogie.html", "AntiSystems.html", "YamadaPerfect.html"]
-}; */
-import artistas from '../public/artistas.json'
+import artistas from './artistas.json'
 const arrowAnterior: Element = document.querySelector(".anterior") as Element;
 const arrowSiguiente: Element = document.querySelector(".siguiente") as Element;
 arrowAnterior?.addEventListener("click", () => {
@@ -62,8 +47,8 @@ arrowSiguiente?.addEventListener("click", () => {
     cambioArrow(1)
 })
 function cambioArrow(direccion:number) {
-    for (const artista in artistas) {
-        const canciones = artistas[artista].canciones;
+    for (const artista of artistas) {
+        const canciones = artista.canciones as string[];
         const cancionActual = canciones.indexOf(pagActual) as number;
         if (cancionActual !== -1) {
             const cambiaCancion: number = (cancionActual + direccion + canciones.length) % canciones.length;
