@@ -8,6 +8,7 @@
     --grid-template-rows-indiceabierto: 1.5em minmax(0, 1fr);
     --inset-vh10: 10vh;
     --max-width-prcnt75: 75%;
+    --height-vh70: 70vh;
 }
 
 html {
