@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,11 +12,86 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap">
 </head>
+
 <body>
     {{>header}}
     <main>
-        
+        <section class="carruselDeTarjetas w-full h-max max-w-full relative">
+            <div class="botonesArrows absolute inset-0 flex items-center justify-between mx-4">
+                <button
+                    class="arrowIndexL size-12 rounded-full bg-slate-900/80 hover:bg-cyan-500/20 border border-cyan-400/30 text-cyan-300 cursor-pointer z-10">
+                    <svg class="size-12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor"
+                        stroke-width="2">
+                        <polyline points="15 18 9 12 15 6" fill="none" />
+                    </svg>
+                </button>
+                <button
+                    class="arrowIndexR size-12 rounded-full bg-slate-900/80 hover:bg-cyan-500/20 border border-cyan-400/30 text-cyan-300 cursor-pointer z-10">
+                    <svg class="size-12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor"
+                        stroke-width="2">
+                        <polyline points="9 18 15 12 9 6" fill="none" />
+                    </svg>
+                </button>
+            </div>
+            <div class="carrusel relative">
+                <div class="tarjetasDelCarrusel flex h-vh70 max-w-2xl max-h-128 snap-x snap-mandatory scroll-smooth overflow-x-auto scrollbar-none place-self-center"
+                    tabindex="0">
+                    <article class="tarjeta relative flex size-full shrink-0 snap-center flex-col">
+                        <picture class="h-3/4 relative">
+                            <a href="/MiPagVocaloid/html/personajes.html" class="absolute inset-0"></a>
+                                <img src="/img/VocaloidVocaloCluster.png" class="size-full object-cover">
+                        </picture>
+                        <p class="h-1/4 text-center text-xl wrap-break-word w-3/4 self-center">
+                            ¡aquí puedes encontrar algunas de las voces más conocidas en el mundo de los bancos de voces
+                            sintetizadas! 👀
+                        </p>
+                    </article>
+
+                    <article class="tarjeta relative flex size-full shrink-0 snap-center flex-col">
+                        <picture class="h-3/4 grid grid-cols-2 grid-rows-2 self-center relative">
+                            <a href="/MiPagVocaloid/html/artistas.html" class="absolute inset-0"></a>
+                            <img src="/img/Kikuo_ArtVocaloid.webp" class="size-full object-cover">
+                            <img src="/img/Deco27_ArtVocaloid.jpg" class="size-full object-cover">
+                            <img src="/img/PinocchioP_ArtVocaloid.webp" class="size-full object-cover">
+                            <img src="/img/Hachi_ArtVocaloid.jpg" class="size-full object-cover">
+                        </picture>
+                        <p class="h-1/4 text-center text-xl wrap-break-word w-3/4 self-center">
+                            si aun no los conoces ¡aquí puedes venir a conocer a algunos artistas que tambien usan
+                            Vocaloid!
+                        </p>
+                    </article>
+
+                    <article class="tarjeta relative flex size-full shrink-0 snap-center flex-col">
+                        <picture class="h-3/4 grid grid-cols-2 grid-rows-2 self-center relative">
+                            <a href="/MiPagVocaloid/html/canciones.html" class="absolute inset-0"></a>
+                            <img src="/img/NoControl_SongVocaloid.jpg" class="size-full object-cover aspect-square">
+                            <img src="/img/Flojera_SongVocaloid.jpg" class="size-full object-cover aspect-square">
+                            <img src="/img/Exorcist_SongVocaloid.jpg" class="size-full object-cover aspect-square">
+                            <img src="/img/Samsa_SongVocaloid.jpg" class="size-full object-cover aspect-square">
+                        </picture>
+                        <p class="h-1/4 text-center text-xl wrap-break-word w-3/4 self-center">
+                            tambien te comparto algunas de las canciones que me gustan de otros artistas :)
+                        </p>
+                    </article>
+                </div>
+            </div>
+
+
+            <nav class="dotsCarrusel flex justify-center gap-2 mt-4">
+                <div
+                    class="dot size-3 z-10 rounded-full bg-white/25 hover:bg-white/45 [.activa]:bg-cyan-400 [.activa]:w-6 transition-width duration-500 activa">
+                </div>
+                <div
+                    class="dot size-3 z-10 rounded-full bg-white/25 hover:bg-white/45 [.activa]:bg-cyan-400 [.activa]:w-6 transition-width duration-500">
+                </div>
+                <div
+                    class="dot size-3 z-10 rounded-full bg-white/25 hover:bg-white/45 [.activa]:bg-cyan-400 [.activa]:w-6 transition-width duration-500">
+                </div>
+            </nav>
+        </section>
     </main>
     {{>footer}}
+
 </body>
+
 </html>
