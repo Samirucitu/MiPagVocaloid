@@ -1,17 +1,20 @@
+import './tailwindcss.css';
+
 //menu desplegable
-function menudesplegable() {
-    const aparecemenudesplegable = <Element>document.querySelector("#barranav");
+const menuDesplegable = document.querySelector("#menuDesplegable") as Element;
+const aparecemenudesplegable = document.querySelector("#barranav") as Element;
+menuDesplegable?.addEventListener("click", () => {
     aparecemenudesplegable.classList.toggle("barranav");
-}
+})
 
 //pagina actual
-const pagActual = <string>window.location.pathname.split("/").pop();
+const pagActual = window.location.pathname.split("/").pop() as string;
 
 //indice
 const indice = document.querySelector(".indice");
 if (indice) {
-    const tituloIndice = <Element>indice.querySelector(".tituloIndice");
-    const ulindice = <Element>indice.querySelector(".ulindice");
+    const tituloIndice = indice.querySelector(".tituloIndice") as Element;
+    const ulindice = indice.querySelector(".ulindice") as Element;
     tituloIndice.addEventListener('click', () => {
         indice.classList.toggle('indiceAbierto');
         ulindice.classList.toggle('visible');
@@ -21,9 +24,9 @@ if (indice) {
 //banner
 const bannerGeneral = document.querySelector(".bannerGeneral");
 if (bannerGeneral) {
-    const banner = <Element>bannerGeneral.querySelector(".banner");
-    const modalBanner = <Element>bannerGeneral.querySelector(".modalBannerCompleto");
-    const cierraBanner = <Element>bannerGeneral.querySelector(".cierraBannerCompleto");
+    const banner = bannerGeneral.querySelector(".banner") as Element;
+    const modalBanner = bannerGeneral.querySelector(".modalBannerCompleto") as Element;
+    const cierraBanner = bannerGeneral.querySelector(".cierraBannerCompleto") as Element;
     banner.addEventListener('click', () => {
         modalBanner.classList.add("bannerCompletoAbierto");
     });
@@ -34,32 +37,59 @@ if (bannerGeneral) {
 }
 
 //flechasNavArtist en canciones de artistas
-const flechasNavArtist = document.querySelector(".flechasNavArtist");
-if (flechasNavArtist) {
-    var artistas: Record<string, string[]> = {
-        Maretu: ["MindBrand.html", "Aishiteitanoni.html", "SIU.html"],
-        Deco27: ["GhostRule.html", "TheVampire.html", "Monitoring.html"],
-        Hachi: ["Matryoshka.html", "WardRoom305.html", "MrsPumpkinsComicaldream.html"],
-        Kikuo: ["shikabanenoodori.html", "aishiteaishiteaishite.html","pokkankaraa.html"],
-        Azari: ["DNA.html", "SellAFriend.html", "ShadowShadow.html"],
-        Eve: ["Insomnia.html", "GhostAvenue.html", "TokyoGhetto.html"],
-        PinocchioP: ["God-ish.html", "LoveAttribute.html", "ReincarnationApple.html"],
-        Inabakumori: ["LagTrain.html", "LostUmbrella.html", "RelayOuter.html"],
-        ABM: ["Yararara.html", "Signaling.html", "Mis-TakeRPG.html"],
-        NAKISO: ["RetryNow.html", "BAKENOHANA.html", "MINAGOROSHI.html"],
-        Kanaria: ["BRAIN.html", "CartoonGirl.html", "Yoidoreshirazu.html"],
-        Kairikibear: ["Venom.html", "Bug.html", "DARLINGDANCE.html"],
-        'Jon-Yakitori': ["KontonBoogie.html", "AntiSystems.html", "YamadaPerfect.html"]
-    };
-}
-function cambioArrow(direccion:number) {
-    for (const artista in artistas) {
-        const canciones = <string[]>artistas[artista];
-        const cancionActual = <number>canciones.indexOf(pagActual);
+import artistas from './artistas.json'
+const arrowAnterior: Element = document.querySelector(".anterior") as Element;
+const arrowSiguiente: Element = document.querySelector(".siguiente") as Element;
+arrowAnterior?.addEventListener("click", () => {
+    cambioArrow(-1)
+})
+arrowSiguiente?.addEventListener("click", () => {
+    cambioArrow(1)
+})
+function cambioArrow(direccion: number) {
+    for (const artista of artistas) {
+        const canciones = artista.canciones as string[];
+        const cancionActual = canciones.indexOf(pagActual) as number;
         if (cancionActual !== -1) {
             const cambiaCancion: number = (cancionActual + direccion + canciones.length) % canciones.length;
-            location.href = <string>canciones[cambiaCancion];
+            location.href = canciones[cambiaCancion] as string;
             break
         }
     }
 }
+
+//carrusel de index
+const arrowLIndex: HTMLDivElement = document.querySelector(".arrowIndexL") as HTMLDivElement;
+const arrowRIndex: Element = document.querySelector(".arrowIndexR") as HTMLDivElement;
+const tarjetasDelCarrusel: HTMLDivElement = document.querySelector(".tarjetasDelCarrusel") as HTMLDivElement;
+const tarjeta: HTMLElement = document.querySelector(".tarjeta") as HTMLElement;
+const dots: NodeListOf<HTMLDivElement> = document.querySelectorAll(".dot") as NodeListOf<HTMLDivElement>;
+arrowLIndex?.addEventListener("click", () => {
+    giraCarrusel(-1);
+})
+arrowRIndex?.addEventListener("click", () => {
+    giraCarrusel(1);
+})
+
+function giraCarrusel(direccion: number) {
+    const maxWCarrusel = tarjetasDelCarrusel.scrollWidth - tarjeta.scrollWidth;
+    const anchoTarjeta: number = tarjeta.clientWidth;
+    let cambioDeTarjeta = tarjetasDelCarrusel.scrollLeft + direccion * anchoTarjeta;
+
+    if (cambioDeTarjeta > maxWCarrusel + 5) cambioDeTarjeta = 0;
+    if (cambioDeTarjeta < -5) cambioDeTarjeta = maxWCarrusel;
+    
+    tarjetasDelCarrusel.scrollTo({ left: cambioDeTarjeta, behavior: "smooth" });
+}
+
+function actualizarDots() {
+    const anchoTarjeta: number = tarjeta.clientWidth;
+    const dotActivo = Math.round(tarjetasDelCarrusel.scrollLeft / anchoTarjeta);
+
+    dots.forEach((dot, i) => {
+        dot.classList.toggle("activa", i === dotActivo);
+    });
+}
+
+tarjetasDelCarrusel?.addEventListener("scroll", actualizarDots, { passive: true });
+actualizarDots();

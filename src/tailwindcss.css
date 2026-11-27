@@ -1,10 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import "tailwindcss";
+@theme{
+    --size-px50: 50px;
+    --breakpoint-px630: 630px;
+    --height-vh20: 20vh;
+    --height-vh40: 40vh;
+    --grid-template-rows-indice: 1.5em minmax(0,0fr);
+    --grid-template-rows-indiceabierto: 1.5em minmax(0, 1fr);
+    --inset-vh10: 10vh;
+    --max-width-prcnt75: 75%;
+    --height-vh70: 70vh;
+}
 
 html {
     scroll-behavior: smooth;
 }
 body{
-    background-color: black;
+    background-color: rgba(0, 0, 0, .9);
     color: white;
     font-family: "Playfair Display";
     display: grid;
@@ -57,4 +68,7 @@ body{
             }
         }
     }
+}
+@view-transition {
+    navigation: auto;
 }
